@@ -1,6 +1,6 @@
 <template>
   <div class="sm:pt-6 sm:pb-10">
-    <Html lang="en" />
+    <Html lang="en" dir="rtl"/>
     <Meta property="og:image" content="/cover.jpg" />
     <Meta name="twitter:card" content="summary_large_image" />
     <AppLoadingBar />
@@ -11,6 +11,9 @@
 
 <style lang="postcss">
 body {
-  @apply bg-primary-50 dark:bg-primary-900;
+  @apply bg-stone-50 dark:bg-stone-900;
+}
+code {
+  direction:ltr;
 }
 </style>
