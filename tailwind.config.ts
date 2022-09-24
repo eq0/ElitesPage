@@ -6,6 +6,9 @@ export default {
     require('@tailwindcss/typography')
   ],
   theme: {
+    fontFamily: {
+      sans: ['Tajawal'],
+    },
     extend: {
       colors: {
         primary: colors.gray
