@@ -155,10 +155,10 @@
             <p class="text-center font-semibold text-lg mt-20">نادي النخبة المطورين</p>
             <div class="flex justify-center">
                 <span>
-                    <Icon name="fa-brands:telegram" class="w-5 h-5" />
+                    <Icon name="fa-brands:telegram" class="w-5 h-5 mx-2" />
                 </span>
                 <span>
-                    <Icon name="fa-brands:instagram" class="w-5 h-5" />
+                    <Icon name="fa-brands:instagram" class="w-5 h-5 mx-2" />
                 </span>
             </div>
         </main>
