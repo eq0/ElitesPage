@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-3xl px-4 py-10 m-auto sm:px-8">
+    <div class="max-w-3xl px-4 py-10 m-auto sm:px-8 dark:text-white">
         <main class="max-w-none">
             <div class="text-center">
                 <div class="flex justify-center mb-6">
