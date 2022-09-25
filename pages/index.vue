@@ -3,11 +3,13 @@
         <main class="max-w-none">
             <div class="text-center">
                 <div class="flex justify-center mb-6">
-                    <svg class="w-[20%] self-center" :class="colorMode.value === 'dark' ? 'fill-light' : 'fill-dark'" viewBox="0 0 156 189" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                    <ColorScheme placeholder="...">
+                    <svg class="w-[20%] self-center" viewBox="0 0 156 189" xmlns="http://www.w3.org/2000/svg">
+                        <path :class="colorMode.value === 'dark' ? 'fill-light' : 'fill-dark'"
                             d="M76.8455 31.8079L0 0V31.8079L0.000216272 31.8079V63.6157V95.4235V124.874V156.436V156.682L76.8457 189L155.063 156.682V124.874L76.8457 156.682L27.445 136.234V106.783L76.8457 127.231L155.063 95.4235V63.6157L76.8457 95.4235L27.445 74.9756V43.1679L76.8455 63.6157L155.063 31.8079V0L76.8455 31.8079Z"
                             />
                     </svg>
+                    </ColorScheme>
                 </div>
                 <h1 class="text-4xl font-bold">نادي النخبة المطورين</h1>
                 <h2 class="text-3xl font-bold">CSIT Developers Club</h2>
@@ -25,16 +27,31 @@
                 </div>
             </div>
 
-            <div class="flex justify-between text-center mx-20">
+            <div v-if="statsPending" class="flex justify-center">
+                <svg class="w-[20%]" version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                    <path :class="colorMode.value === 'dark' ? 'fill-light' : 'fill-dark'" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+                </path>
+                </svg>
+            </div>
+            <div v-else class="flex justify-between text-center mx-20">
                 <div v-for="stato in stats[0]?.stat" :key="stato.id" class="flex flex-col">
                     <p class="text-3xl font-bold">{{stato.stat}}</p>
                     <p class="text-md font-bold">{{stato.name}}</p>
                 </div>
             </div>
 
-            <p class="text-3xl font-semibold mb-3 ml-10 mt-8">أعضاء الفريق</p>
+            <p class="text-3xl font-semibold mb-3 mt-8">أعضاء الفريق</p>
+            
+            <div v-if="corePending" class="flex justify-center">
+                <svg class="w-[20%]" version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                    <path :class="colorMode.value === 'dark' ? 'fill-light' : 'fill-dark'" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+                </path>
+                </svg>
+            </div>
 
-            <div class="flex justify-between mt-2">
+            <div v-else class="flex justify-between mt-2">
                 <div class="flex flex-col">
                     <div v-for="(member, i) in core[0]?.members" :key="member.id">
                         <div v-if="i % 2 == 0" class="flex mt-5 group">
@@ -90,9 +107,15 @@
                 </div>
             </div>
 
-            <p class="text-3xl font-semibold mb-3 ml-10 mt-8">اخر المنشورات</p>
-
-            <div class="flex">
+            <p class="text-3xl font-semibold mb-3 mt-8">آخر المنشورات</p>
+            <div v-if="postPending" class="flex justify-center">
+                <svg class="w-[20%]" version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                    <path :class="colorMode.value === 'dark' ? 'fill-light' : 'fill-dark'" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+                </path>
+                </svg>
+            </div>
+            <div v-else class="flex">
                 <a class="w-full " :href="post._path" v-for="post in posts" :key="post.id">
                     <div class="bg-light dark:bg-dark
                     drop-shadow-[2px_2px_0px_#4F009D]
@@ -135,8 +158,8 @@
 <script setup>
 const colorMode = useColorMode()
 const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent().where({ _partial: true, _type: "markdown" }).find())
-const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent().where({ _partial: true, _type: "json" }).find())
-const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent().where({ _partial: true, _type: "json" }).find())
+const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent().where({ _partial: true }).find())
+const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent().where({ _partial: true }).find())
 
 
 
