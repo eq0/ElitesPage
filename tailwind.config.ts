@@ -11,7 +11,9 @@ export default {
     },
     extend: {
       colors: {
-        primary: colors.gray
+        dark: "#0F0F11",
+        light: "#F3F3F3",
+        mid: "#B7B7B7",
       }
     }
   }

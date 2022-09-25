@@ -11,7 +11,7 @@
 
 <style lang="postcss">
 body {
-  @apply bg-stone-50 dark:bg-stone-900;
+  @apply bg-light dark:bg-dark;
 }
 code {
   direction:ltr;
