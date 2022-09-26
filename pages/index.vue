@@ -68,7 +68,7 @@
                                 <img class="h-16
                                 w-16
                                 border-2
-                                border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
+                                border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
                             <div class="mt-1 mr-5">
                                 <p class="text-xl font-semibold">{{member.name}}</p>
@@ -103,7 +103,7 @@
                                 <img class="h-16
                                 w-16
                                 border-2
-                                border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
+                                border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
                         </div>
                     </div>
@@ -166,9 +166,16 @@
 </template>
 
 <script setup>
+import { filename } from 'pathe/utils';
+
 const colorMode = useColorMode()
 const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent("_posts").where({ _partial: true, _type: "markdown" }).find())
 const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent("_stat").where({ _partial: true }).find())
 const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent("_core").where({ _partial: true }).find())
 
+
+const glob = import.meta.glob('~/assets/*.jpg', { eager: true });
+const dynamicImages = Object.fromEntries(
+  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+);
 </script>

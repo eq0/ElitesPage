@@ -1,12 +1,12 @@
 {
-    "members": [{"name": "زين العابدين أحمد", "label": "Front-End Developer", "img": "ZainAhmad.png"},
-        {"name": "حسن الخالدي", "label": "Front-End Developer", "img": "HasanAlkhalidi.jpg"},
-        {"name": "فاطمة نوفل", "label": "Front-End Developer", "img": "FatmaNawfal.jpg"},
-        {"name": "محمد جواد", "label": "Front-End Developer", "img": "MohammedJawad.jpg"},
-        {"name": "منار ناصر", "label": "Front-End Developer", "img": "ManarNaser.jpg"},
-        {"name": "أحمد عبدالكريم", "label": "Front-End Developer", "img": "AhmedAbdulkareem.jpg"},
-        {"name": "حسين نجاح", "label": "Front-End Developer", "img": "HusseinNajah.jpg"},
-        {"name": "زينب أمجد", "label": "Front-End Developer", "img": "ZainabAmjed.jpg"},
-        {"name": "موسى نمير", "label": "Front-End Developer", "img": "mosanameer.jpg"}
+    "members": [{"name": "زين العابدين أحمد", "label": "Front-End Developer", "img": "ZainAhmad"},
+        {"name": "حسن الخالدي", "label": "Front-End Developer", "img": "HasanAlkhalidi"},
+        {"name": "فاطمة نوفل", "label": "Front-End Developer", "img": "FatmaNawfal"},
+        {"name": "محمد جواد", "label": "Front-End Developer", "img": "MohammedJawad"},
+        {"name": "منار ناصر", "label": "Front-End Developer", "img": "ManarNaser"},
+        {"name": "أحمد عبدالكريم", "label": "Front-End Developer", "img": "AhmedAbdulkareem"},
+        {"name": "حسين نجاح", "label": "Front-End Developer", "img": "HusseinNajah"},
+        {"name": "زينب أمجد", "label": "Front-End Developer", "img": "ZainabAmjed"},
+        {"name": "موسى نمير", "label": "Front-End Developer", "img": "mosanameer"}
     ]
 }
