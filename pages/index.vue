@@ -143,13 +143,13 @@
             <p class="text-3xl font-semibold text-center mb-3 mt-20">يمكنك المساهمة في تطوير المجتمع المحلي</p>
 
             <div class="flex justify-around text-center">
-                <div class="mt-2 flex flex-col">
+                <div class="mt-5 md:mt-2 flex flex-col">
                     <span class="self-center">
                         <Icon name="fluent-emoji:man-teacher-light" class="w-32 h-16 md:w-44 md:h-24" />
                     </span>
                     <p class="mt-2">عبر تقديم الجلسات في مجال خبرتك.</p>
                 </div>
-                <div class="mt-2 flex flex-col">
+                <div class="mt-5 md:mt-2 flex flex-col">
                     <span class="self-center">
                         <Icon name="fluent-emoji:handshake" class="w-32 h-16 md:w-44 md:h-24" />
                     </span>
