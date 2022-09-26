@@ -38,7 +38,7 @@
                     </path>
                 </svg>
             </div>
-            <div v-else class="flex justify-between text-center mx-20">
+            <div v-else class="flex justify-between text-center mx-16 md:mx-20">
                 <div v-for="stato in stats[0]?.stat" :key="stato.id" class="flex flex-col">
                     <p class="text-3xl font-bold">{{stato.stat}}</p>
                     <p class="text-md font-bold">{{stato.name}}</p>
@@ -59,17 +59,17 @@
                 </svg>
             </div>
 
-            <div v-else class="flex justify-around lg:justify-between mt-2 mr-2 md:mr-0">
+            <div v-else class="flex justify-around md:justify-between mt-2 mr-2">
                 <div class="flex flex-col">
                     <div v-for="(member, i) in core[0]?.members" :key="member.id">
-                        <div v-if="i % 2 == 0" class="flex flex-col lg:flex-row mt-5 group">
+                        <div v-if="i % 2 == 0" class="flex flex-col md:flex-row mt-5 group">
                             <div
                                 class="self-center drop-shadow-[2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] duration-200">
-                                <img class=" w-28 h-28 md:h-56 md:w-56 lg:h-16 lg:w-16
+                                <img class=" w-28 h-28 md:w-24 md:h-24 lg:h-16 lg:w-16
                                 border-2
                                 border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
-                            <div class="mt-2 text-center lg:text-righr lg:mr-5">
+                            <div class="self-center mt-2 text-center md:text-right md:mr-5">
                                 <p class="text-base md:text-xl font-semibold">{{member.name}}</p>
                                 <p class="text-sm md:text-base">{{member.label}}</p>
                             </div>
@@ -92,14 +92,14 @@
                 </div>
                 <div class="flex flex-col">
                     <div v-for="(member, i) in core[0]?.members" :key="member.id">
-                        <div v-if="i % 2 != 0" class="flex flex-col lg:flex-row mt-5 group">
-                            <div class="mt-2 lg:mt-1 lg:mr-0 lg:ml-5 text-center lg:text-left order-2 lg:order-1">
+                        <div v-if="i % 2 != 0" class="flex flex-col md:flex-row mt-5 group">
+                            <div class="self-center mt-2 md:mr-0 md:ml-5 text-center md:text-left order-2 md:order-1">
                                 <p class="text-base md:text-xl font-semibold">{{member.name}}</p>
                                 <p class="text-sm md:text-base">{{member.label}}</p>
                             </div>
                             <div
                                 class="self-center order-1 lg:order-2 drop-shadow-[2px_2px_0px_#4F009D] drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
-                                <img class="w-28 h-28 md:h-56 md:w-56 lg:h-16 lg:w-16
+                                <img class="w-28 h-28 md:w-24 md:h-24 lg:h-16 lg:w-16
                                 border-2
                                 border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
