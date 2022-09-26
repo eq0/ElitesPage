@@ -17,10 +17,5 @@ export default defineNuxtConfig({
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: 'vitesse-dark'
     }
-  },
-  googleFonts: {
-    families: {
-      Tajawal: [400, 500, 700],
-    }
-  }  
+  },  
 })

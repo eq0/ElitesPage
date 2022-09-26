@@ -10,6 +10,8 @@
 </template>
 
 <style lang="postcss">
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
 body {
   @apply bg-light dark:bg-dark;
 }
