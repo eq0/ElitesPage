@@ -65,14 +65,14 @@
                         <div v-if="i % 2 == 0" class="flex flex-col lg:flex-row mt-5 group">
                             <div
                                 class="drop-shadow-[2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] duration-200">
-                                <img class="h-48 w-48 lg:h-16
+                                <img class="h-36 w-36  lg:h-16
                                 lg:w-16
                                 border-2
                                 border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
                             </div>
                             <div class="mt-1 mr-5">
-                                <p class="text-xl font-semibold">{{member.name}}</p>
-                                <p class="">{{member.label}}</p>
+                                <p class="text-xl text-center font-semibold">{{member.name}}</p>
+                                <p class="text-center">{{member.label}}</p>
                             </div>
                         </div>
                     </div>
