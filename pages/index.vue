@@ -164,10 +164,10 @@
 
 <script setup>
 const colorMode = useColorMode()
-const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent().where({ _partial: true, _type: "markdown" }).find())
-const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent().where({ _partial: true }).find())
-const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent().where({ _partial: true }).find())
+const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent("_posts").where({ _partial: true, _type: "markdown" }).find())
+const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent("_stat").where({ _partial: true }).find())
+const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent("_core").where({ _partial: true }).find())
 
-
+console.log(core);
 
 </script>
