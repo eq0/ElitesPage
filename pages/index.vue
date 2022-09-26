@@ -10,10 +10,10 @@
                         </svg>
                     </ColorScheme>
                 </div>
-                <h1 class="text-4xl font-bold">نادي النخبة المطورين</h1>
-                <h2 class="text-3xl font-bold">CSIT Developers Club</h2>
+                <h1 class="text-2xl md:text-4xl font-bold">نادي النخبة المطورين</h1>
+                <h2 class="text-xl md:text-3xl font-bold">CSIT Developers Club</h2>
             </div>
-            <p class="text-center mx-20">نادي طلابي لتطوير المهارات التقنية وتطوير الحلول التكنولوجية للمجتمع المحلي،
+            <p class="text-center mx-6 md:mx-20">نادي طلابي لتطوير المهارات التقنية وتطوير الحلول التكنولوجية للمجتمع المحلي،
                 الفريق ضمن
                 مشروع قادة
                 التحوّل الرقمي التابع رسميًا إلى جامعة البصرة، كلية علوم الحاسوب وتكنولوجيا المعلومات.</p>
@@ -132,7 +132,7 @@
                         <div class="m-2 flex flex-col justify-center">
                             <Icon class="w-14 h-14" :name="`fluent-emoji:${post.emoji}`" />
                         </div>
-                        <div class="my-2 mt-5 md:mt-0 flex flex-col justify-center">
+                        <div class="my-2 mt-5 md:mt-0 ml-2 flex flex-col justify-center">
                             <p class="font-semibold text-lg">{{post.title}}</p>
                             <p>{{post.description}}</p>
                         </div>
