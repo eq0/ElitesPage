@@ -99,7 +99,7 @@
                                 <p class="">{{member.label}}</p>
                             </div>
                             <div
-                                class="order-1 md:order-2 drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
+                                class="order-1 md:order-2 drop-shadow-[2px_2px_0px_#4F009D] md:drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] md:group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
                                 <img class="h-16
                                 w-16
                                 border-2
