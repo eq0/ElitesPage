@@ -38,7 +38,7 @@
                     </path>
                 </svg>
             </div>
-            <div v-else class="flex justify-between text-center mx-16 md:mx-20">
+            <div v-else class="flex justify-between text-center mx-6 sm:mx-16 md:mx-20">
                 <div v-for="stato in stats[0]?.stat" :key="stato.id" class="flex flex-col">
                     <p class="text-3xl font-bold">{{stato.stat}}</p>
                     <p class="text-md font-bold">{{stato.name}}</p>
