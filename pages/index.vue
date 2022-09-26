@@ -62,11 +62,11 @@
             <div v-else class="md:flex justify-between mt-2 mr-2 md:mr-0">
                 <div class="flex flex-col">
                     <div v-for="(member, i) in core[0]?.members" :key="member.id">
-                        <div v-if="i % 2 == 0" class="flex mt-5 group">
+                        <div v-if="i % 2 == 0" class="flex flex-col lg:flex-row mt-5 group">
                             <div
                                 class="drop-shadow-[2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] duration-200">
-                                <img class="h-16
-                                w-16
+                                <img class="h-48 w-48 lg:h-16
+                                lg:w-16
                                 border-2
                                 border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
                             </div>
