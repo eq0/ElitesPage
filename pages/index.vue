@@ -67,7 +67,7 @@
                                 class="self-center drop-shadow-[2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] duration-200">
                                 <img class=" w-28 h-28 md:h-56 md:w-56 lg:h-16 lg:w-16
                                 border-2
-                                border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
+                                border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
                             <div class="mt-2 text-center lg:text-righr lg:mr-5">
                                 <p class="text-base md:text-xl font-semibold">{{member.name}}</p>
@@ -101,7 +101,7 @@
                                 class="self-center order-1 lg:order-2 drop-shadow-[2px_2px_0px_#4F009D] md:drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] md:group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
                                 <img class="w-28 h-28 md:h-56 md:w-56 lg:h-16 lg:w-16
                                 border-2
-                                border-dark dark:border-light" :src="`assets/${member.img}`" alt="">
+                                border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
                             </div>
                         </div>
                     </div>
@@ -164,9 +164,16 @@
 </template>
 
 <script setup>
+import { filename } from 'pathe/utils';
+
 const colorMode = useColorMode()
 const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent("_posts").where({ _partial: true, _type: "markdown" }).find())
 const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent("_stat").where({ _partial: true }).find())
 const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent("_core").where({ _partial: true }).find())
 
+
+const glob = import.meta.glob('~/assets/*.jpg', { eager: true });
+const dynamicImages = Object.fromEntries(
+  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+);
 </script>
