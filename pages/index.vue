@@ -123,7 +123,10 @@
                 </svg>
             </div>
             <div v-else class="flex">
-                <a class="w-full " :href="post._path" v-for="post in posts" :key="post.id">
+                <NuxtLink
+                    class="w-full " v-for="post in posts" :key="post.id"
+                    :to="post._path"
+                >
                     <div class="bg-light dark:bg-dark mx-2 md:mx--0
                     drop-shadow-[2px_2px_0px_#4F009D]
                     flex
@@ -137,7 +140,7 @@
                             <p>{{post.description}}</p>
                         </div>
                     </div>
-                </a>
+                </NuxtLink>
             </div>
 
             <p class="text-3xl font-semibold text-center mb-3 mt-20">يمكنك المساهمة في تطوير المجتمع المحلي</p>
