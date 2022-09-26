@@ -98,7 +98,7 @@
                                 <p class="text-sm md:text-base">{{member.label}}</p>
                             </div>
                             <div
-                                class="self-center order-1 lg:order-2 drop-shadow-[2px_2px_0px_#4F009D] md:drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] md:group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
+                                class="self-center order-1 lg:order-2 drop-shadow-[2px_2px_0px_#4F009D] drop-shadow-[-2px_2px_0px_#4F009D] transition ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[4px_4px_0px_#4F009D] group-hover:drop-shadow-[-4px_4px_0px_#4F009D] duration-200">
                                 <img class="w-28 h-28 md:h-56 md:w-56 lg:h-16 lg:w-16
                                 border-2
                                 border-dark dark:border-light" :src="dynamicImages[member.img]" alt="">
