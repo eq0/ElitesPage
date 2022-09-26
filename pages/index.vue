@@ -132,7 +132,7 @@
                         <div class="m-2 flex flex-col justify-center">
                             <Icon class="w-14 h-14" :name="`fluent-emoji:${post.emoji}`" />
                         </div>
-                        <div class="my-2 mt-5 md:mt-0 ml-2 flex flex-col justify-center">
+                        <div class="my-2 md:my-4 ml-2 flex flex-col justify-center">
                             <p class="font-semibold text-lg">{{post.title}}</p>
                             <p>{{post.description}}</p>
                         </div>
@@ -167,7 +167,5 @@ const colorMode = useColorMode()
 const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent("_posts").where({ _partial: true, _type: "markdown" }).find())
 const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent("_stat").where({ _partial: true }).find())
 const { data: core, pending: corePending } = await useAsyncData('core', () => queryContent("_core").where({ _partial: true }).find())
-
-console.log(core);
 
 </script>
