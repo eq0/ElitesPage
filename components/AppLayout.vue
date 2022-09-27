@@ -10,8 +10,10 @@
 </template>
 
 <style lang="postcss">
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
 body {
-  @apply bg-stone-50 dark:bg-stone-900;
+  @apply bg-light dark:bg-dark;
 }
 code {
   direction:ltr;
