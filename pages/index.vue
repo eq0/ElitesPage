@@ -166,6 +166,11 @@
 <script setup>
 import { filename } from 'pathe/utils';
 
+useHead({
+        title: 'نادي النخبة المطورين'
+    })
+
+
 const colorMode = useColorMode()
 const { data: posts, pending: postPending } = await useAsyncData('posts', () => queryContent("_posts").where({ _partial: true, _type: "markdown" }).find())
 const { data: stats, pending: statsPending } = await useAsyncData('stat', () => queryContent("_stat").where({ _partial: true }).find())
@@ -176,4 +181,5 @@ const glob = import.meta.glob('~/assets/*.jpg', { eager: true });
 const dynamicImages = Object.fromEntries(
   Object.entries(glob).map(([key, value]) => [filename(key), value.default])
 );
+
 </script>
